@@ -27,11 +27,16 @@ echo "<link rel='stylesheet' type='text/css' href='$URL/css/style.css'>"
 echo "</head>"
 echo "<body>"
 
-if [[ ${GET[0]} = "get_log_file" ]]; then
-	LOG_FILE_NAME=${GET[1]}
-	source "$ROOT/inc/get_log_file.cgi"
+logDirs=("server.logs" "htdocs/storage/logs")
+logDirsDesc=("Server Logs" "Lumen Logs")
+
+if [[ ${GET[0]} = "view" ]]; then
+	LOG_FILE_DIR=${GET[1]}
+	LOG_FILE_NAME=${GET[2]}
+	source "$ROOT/inc/view.cgi"
 else
-	source "$ROOT/inc/main.cgi"
+	LOG_FILE_DIR=${GET[1]}
+	source "$ROOT/inc/list.cgi"
 fi
 
 echo "<script type='text/javascript' src='$URL/js/script.js'></script>"

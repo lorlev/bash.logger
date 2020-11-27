@@ -10,10 +10,10 @@ $(window).load(function() {
 
 $(document).ready(function() {
 
-	setTimeout(function(){
+/*	setTimeout(function(){
 		window.location.reload(1);
 	}, 15000);
-
+*/
 	var pre = document.getElementsByTagName('pre'),
 		pl = pre.length;
 
