@@ -27,8 +27,8 @@ echo "<link rel='stylesheet' type='text/css' href='$URL/css/style.css'>"
 echo "</head>"
 echo "<body>"
 
-logDirs=("server.logs" "htdocs/storage/logs")
-logDirsDesc=("Server Logs" "Lumen Logs")
+logDirs=("server.logs" "htdocs/storage/logs" "htdocs/crons/cron-logs")
+logDirsDesc=("Server Logs" "Lumen Logs" "Cron Logs")
 
 if [[ ${GET[0]} = "view" ]]; then
 	LOG_FILE_DIR=${GET[1]}

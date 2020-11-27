@@ -10,23 +10,25 @@ if [ -z "$LOG_FILE_DIR" ]; then
 
 		Dir="../${logDirs[$i]}"
 
-		echo "<div class='col-sm-2'>"
-		echo "<a href='$URL/list/$i'>"
-		echo "<div class='card'>"
-		echo "<div class='card-header bg-transparent'>"
-		echo "<img src='$URL/img/dir.jpg' class='mx-auto d-block' style='max-width: 84px;'>"
-		echo "</div>"
-		echo "<div class='card-body' style='padding: 10px 14px;'>"
-		echo "<h7 class='card-title font-weight-bold'>"
-		echo "<h7 class='card-title font-weight-bold'>${logDirsDesc[$i]}</h7>"
-		echo "<p class='card-text text-muted' style='font-size: 12px;'>`du -h $Dir | cut -f -1`</p>"
-		echo "</div>"
-		echo "<div class='card-footer' style='padding: 5px 14px;'>"
-		echo "<small class='text-muted'>`date -r $Dir '+%m-%d-%Y %H:%M:%S'`</small>"
-		echo "</div>"
-		echo "</a>"
-		echo "</div>"
-		echo "</div>"
+		if [ -d $Dir ]; then
+			echo "<div class='col-sm-2'>"
+			echo "<a href='$URL/list/$i'>"
+			echo "<div class='card'>"
+			echo "<div class='card-header bg-transparent'>"
+			echo "<img src='$URL/img/dir.jpg' class='mx-auto d-block' style='max-width: 84px;'>"
+			echo "</div>"
+			echo "<div class='card-body' style='padding: 10px 14px;'>"
+			echo "<h7 class='card-title font-weight-bold'>"
+			echo "<h7 class='card-title font-weight-bold'>${logDirsDesc[$i]}</h7>"
+			echo "<p class='card-text text-muted' style='font-size: 12px;'>`du -h $Dir | cut -f -1`</p>"
+			echo "</div>"
+			echo "<div class='card-footer' style='padding: 5px 14px;'>"
+			echo "<small class='text-muted'>`date -r $Dir '+%m-%d-%Y %H:%M:%S'`</small>"
+			echo "</div>"
+			echo "</a>"
+			echo "</div>"
+			echo "</div>"
+		fi
 
 	done;
 
