@@ -8,7 +8,7 @@ echo "<pre id='code'>"
 #LogLineNum=$( tail -n 100 "$LOG_FILE_NAME" | grep "getModels" | wc -l )
 #Grep=$( tail -n 100 "$LOG_FILE_NAME" | grep "getModels")
 
-LogBody=$( tail -n 200 $LOG_FILE_NAME )
+LogBody=$( tail -n 400 $LOG_FILE_NAME )
 
 LogBody=$(echo "${LogBody//$'\n'/</code><code>}") #Replace /n to <code> tag
 LogBody=$(echo "${LogBody//$'[32m'/<span style='color: #00A000;' />}") #Green

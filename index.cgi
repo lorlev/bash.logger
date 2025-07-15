@@ -11,7 +11,7 @@ echo
 SCRIPT=$(readlink -f "$0")
 ROOT=$(dirname "$SCRIPT")
 
-if [ "${HTTP_CLOUDFRONT_FORWARDED_PROTO}" = "https" ]; then
+if [ "$HTTP_X_FORWARDED_PROTO" = "https" ] || [ "$HTTP_CLOUDFRONT_FORWARDED_PROTO" = "https" ]; then
 	export REQUEST_SCHEME="https"
 else
 	export REQUEST_SCHEME="http"
